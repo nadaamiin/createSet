@@ -3,7 +3,6 @@
 #include <algorithm>
 
 using namespace std;
-
 template<class T>
 class set{
 private:
@@ -12,11 +11,11 @@ public:
     bool exist(const T& element) const{
         return any_of(vec.begin(), vec.end(), [&](const T& i) { return i == element; });
     }
-    void add(const T& element){
+    void insert(const T& element){
         if(!exist(element))
             vec.push_back(element);
     }
-    void remove(const T& element){
+    void erase(const T& element){
         for (auto it = vec.begin(); it != vec.end(); ++it) {
             if(*it == element){
                 vec.erase(it);
@@ -43,10 +42,10 @@ public:
 };
 int main(){
     set<double> s;
-    s.add(6.6);
-    s.add(7);
+    s.insert(6.6);
+    s.insert(7);
     cout << s.size() << endl;
-    s.remove(8);
+    s.erase(7);
     s.print();
     cout << s.size() << endl;
 
