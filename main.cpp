@@ -42,22 +42,49 @@ public:
     }
 };
 int main() {
-    set<double> s;
-    s.insert(6.6);
-    s.insert(7);
-    cout << s.size() << endl;
-    s.erase(7);
-    s.print();
-    cout << s.size() << endl;
+    set<int> set1;
+    set1.insert(400);
+    set1.insert(300);
+    set1.insert(500);
+    set1.insert(900);
+    cout << set1.size() << endl;
+    set1.erase(100);
+    set1.erase(300);
+    set1.print();
+    cout << set1.size() << endl;
 
-    double *arr = s.array();
-    cout << "Array contents: ";
-    for (int i = 0; i < s.size(); ++i) {
-        cout << arr[i] << " ";
+    cout << set1.exist(100) << endl;
+    cout << set1.exist(500) << endl;
+
+    int *arr1 = set1.array();
+    cout << "Contents of array: ";
+    for (int i = 0; i < set1.size(); ++i) {
+        cout << arr1[i] << " ";
     }
     cout << endl;
 
-    delete[] arr; // Free allocated memory
+    delete[] arr1; // Free allocated memory
+
+    cout << "------------------------------------------------------------------\n";
+
+    set<double> set2;
+    set2.insert(6.6);
+    set2.insert(7.9);
+    cout << set2.size() << endl;
+    set2.erase(7.9);
+    set2.print();
+    cout << set2.size() << endl;
+
+    double *arr2 = set2.array();
+    cout << "Contents of array: ";
+    for (int i = 0; i < set2.size(); ++i) {
+        cout << arr2[i] << " ";
+    }
+    cout << endl;
+
+    delete[] arr2; // Free allocated memory
+
+    cout << "------------------------------------------------------------------\n";
 
     set<Student> students;
 
@@ -68,6 +95,7 @@ int main() {
     students.insert(s1);
     students.insert(s2);
     students.insert(s3);
+    students.insert(s3);
 
     students.print();
 
@@ -76,4 +104,7 @@ int main() {
 
     cout << students.exist(s1) << endl;
     cout << students.exist(s2) << endl;
+
+    cout << endl;
+
 }
