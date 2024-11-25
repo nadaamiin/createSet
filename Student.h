@@ -9,7 +9,9 @@ private:
     int id;
     int age;
 public:
-    Student() = default;
+    // Default constructor with default values
+    Student() : name("No name"), id(0), age(0){};
+    // Parameterized constructor
     Student(string name, int id, int age) : name(std::move(name)), id(id),age(age) {}
     bool operator==(const Student& other) const;
     bool operator!=(const Student& other) const;
