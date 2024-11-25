@@ -9,6 +9,7 @@ private:
     int id;
     int age;
 public:
+    Student() = default;
     Student(string name, int id, int age) : name(std::move(name)), id(id),age(age) {}
     bool operator==(const Student& other) const;
     bool operator!=(const Student& other) const;

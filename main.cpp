@@ -28,7 +28,7 @@ public:
         return vec.size();
     }
     T* array() const{
-        T* arr = new T(vec.size());
+        T* arr = new T[(vec.size())];
         for (int i = 0; i < vec.size(); ++i) {
             arr[i] = vec[i];
         }
@@ -83,6 +83,30 @@ int main() {
     cout << endl;
 
     delete[] arr2; // Free allocated memory
+
+    cout << "------------------------------------------------------------------\n";
+
+    set<string> set3;
+    set3.insert("C++");
+    set3.insert("Python");
+    set3.insert("Java");
+    set3.insert("SQL");
+    cout << set3.size() << endl;
+    set3.erase("Java");
+    set3.print();
+    cout << set3.size() << endl;
+
+    cout << set3.exist("Python") << endl;
+    cout << set3.exist("Java") << endl;
+
+    string *arr3 = set3.array();
+    cout << "Contents of array: ";
+    for (int i = 0; i < set3.size(); ++i) {
+        cout << arr3[i] << " ";
+    }
+    cout << endl;
+
+    delete[] arr3; // Free allocated memory
 
     cout << "------------------------------------------------------------------\n";
 
