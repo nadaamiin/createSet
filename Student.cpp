@@ -1,6 +1,10 @@
 #include "Student.h"
 
 using namespace std;
-class Student{
+bool Student::operator==(const Student& other) const{
+    return (name == other.name) && (id == other.id) && (age == other.age);
+}
+bool Student::operator!=(const Student& other) const{
+    return (name != other.name) && (id != other.id) && (age != other.age);
+}
 
-};

@@ -40,6 +40,15 @@ public:
         cout << endl;
     }
 };
+
+template<typename T>
+ostream& operator<<(ostream& out, set<T> s) {
+    for (int i = 0; i < s.size; ++i) {
+        out << s.data[i] << " ";
+    }
+    out << "\n";
+}
+
 int main(){
     set<double> s;
     s.insert(6.6);
