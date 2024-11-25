@@ -4,4 +4,6 @@ project(createSet)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(createSet
-        main.cpp)
+        main.cpp
+        Student.h
+        Student.cpp)
