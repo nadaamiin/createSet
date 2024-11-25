@@ -118,6 +118,7 @@ int main() {
 
     cout << set3.exist("Python") << endl;
     cout << set3.exist("Java") << endl;
+    cout << set3.exist("SQL") << endl;
 
     string *arr3 = set3.array();
     cout << "Contents of array: ";
