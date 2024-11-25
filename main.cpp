@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "Student.h"
 
 using namespace std;
 template<class T>
@@ -40,16 +41,7 @@ public:
         cout << endl;
     }
 };
-
-template<typename T>
-ostream& operator<<(ostream& out, set<T> s) {
-    for (int i = 0; i < s.size; ++i) {
-        out << s.data[i] << " ";
-    }
-    out << "\n";
-}
-
-int main(){
+int main() {
     set<double> s;
     s.insert(6.6);
     s.insert(7);
@@ -58,7 +50,7 @@ int main(){
     s.print();
     cout << s.size() << endl;
 
-    double* arr = s.array();
+    double *arr = s.array();
     cout << "Array contents: ";
     for (int i = 0; i < s.size(); ++i) {
         cout << arr[i] << " ";
@@ -66,4 +58,22 @@ int main(){
     cout << endl;
 
     delete[] arr; // Free allocated memory
+
+    set<Student> students;
+
+    Student s1("Nada", 20230440, 18);
+    Student s2("Menna", 20230571, 19);
+    Student s3("Safia", 20231088, 18);
+
+    students.insert(s1);
+    students.insert(s2);
+    students.insert(s3);
+
+    students.print();
+
+    students.erase(s1);
+    students.print();
+
+    cout << students.exist(s1) << endl;
+    cout << students.exist(s2) << endl;
 }
