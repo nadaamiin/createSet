@@ -50,6 +50,7 @@ public:
         for (int i = 0; i < vec.size(); ++i) {
             arr[i] = vec[i];
         }
+        sort(arr, arr + vec.size());
         return arr;
     }
     // Function to print the set elements
