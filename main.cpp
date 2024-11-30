@@ -1,3 +1,8 @@
+// Nada Amin Fawzy Mohamed
+// 20230440
+// S21
+// Problem 4
+// A2_S21_20230440_SheetPb4
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -45,11 +50,16 @@ public:
         for (int i = 0; i < vec.size(); ++i) {
             arr[i] = vec[i];
         }
+        sort(arr, arr + vec.size());
         return arr;
     }
     // Function to print the set elements
     void print() const{
-        for (const auto& it : vec) {
+        // Create a copy of vec for sorting
+        vector<T> sorted_vec = vec;
+        // Sort the copied vector
+        sort(sorted_vec.begin(), sorted_vec.end());
+        for (const auto& it : sorted_vec){
             cout << it << " ";
         }
         cout << endl;
@@ -182,8 +192,8 @@ int main() {
     set<Student> students;
 
     Student s1("Nada", 20230440, 18);
-    Student s2("Menna", 20230571, 19);
     Student s3("Safia", 20231088, 18);
+    Student s2("Menna", 20230571, 19);
     Student s4("Safia", 20231088, 18);
 
     students.insert(s1);
